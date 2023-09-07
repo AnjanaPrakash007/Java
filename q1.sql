@@ -1,0 +1,12 @@
+create table depositor(acc_no int primary key,depositor_name varchar(20) not null,branch varchar(10) not null,balance int );
+insert into depositor values(101,'Suresh','kanhangad',2000);
+insert into depositor values(102,'Babu','kannur',3000);
+insert into depositor values(103,'ramesh','kottayam',8000);
+insert into depositor values(104,'renuka','kollam',9000);
+select * from depositor;
+create table borrower(loan_no int primary key,acc_no int ,amount int not null,foreign key(acc_no) references depositor(acc_no));
+insert into borrower values(1,102,6000);
+insert into borrower values(5,103,5000);
+insert into borrower values(3,101,4000);
+insert into borrower values(2,102,2000);
+select * from borrower;
